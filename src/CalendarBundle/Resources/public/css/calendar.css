@@ -1,0 +1,56 @@
+.clear {
+  clear: both;
+  height: 0px;
+  line-height: 0px;
+  overflow: hidden; }
+
+.desp-5 {
+  clear: both;
+  height: 5px;
+  line-height: 5px;
+  overflow: hidden; }
+
+.desp-10 {
+  clear: both;
+  height: 10px;
+  line-height: 10px;
+  overflow: hidden; }
+
+.float {
+  float: left; }
+
+.col {
+  border: 1px solid #cccccc;
+  margin: 1px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 12px; }
+  .col .activ {
+    background: #336699;
+    color: #ffffff; }
+
+.row-top .middle {
+  width: 141px;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  margin: 1px;
+  border: 1px solid #ffffff; }
+
+.row-top .prev-next {
+  width: 25px;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  margin: 1px;
+  border: 1px solid #ffffff; }
+
+.row-head .col {
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px; }
+
+.out {
+  color: #cccccc; }

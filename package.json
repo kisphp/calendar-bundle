@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "gulp": "gulp --gulpfile gulp/gulpfile.js --cwd ."
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
