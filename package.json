@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "gulp": "gulp --gulpfile gulp/gulpfile.js --cwd ."
+    "gulp": "gulp --gulpfile gulp/gulpfile.js --cwd .",
+    "postinstall": "npm run gulp"
   },
   "dependencies": {
     "gulp": "^3.9.1",

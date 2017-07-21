@@ -1,6 +1,8 @@
-$column_width: 50px;
-$column_height: 50px;
-$font-size: 20px;
+$column_width: 50px !default;
+$column_height: 50px !default;
+$font-size: 20px !default;
+$active_background: #369 !default;
+$active_color: #fff !default;
 
 @import "mixins";
 
@@ -24,7 +26,7 @@ $font-size: 20px;
   }
 
   .col {
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     margin: 1px;
     width: $column_width;
     height: $column_height;
@@ -32,9 +34,9 @@ $font-size: 20px;
     text-align: center;
     font-size: $font-size;
 
-    .activ {
-      background: #336699;
-      color: #ffffff;
+    .active {
+      background: $active_background;
+      color: $active_color;
     }
   }
 
