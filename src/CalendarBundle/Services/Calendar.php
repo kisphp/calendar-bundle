@@ -70,24 +70,29 @@ class Calendar
         $this->nextMonthDate->modify('first day of this month');
 
         $lastDayPreviusMonthEnd = (int) $this->previousMonthDate->format('N');
-        $firstDayNextMonthStart = 7 - (int) $this->nextMonthDate->format('N');
+        $firstDayNextMonthStart = (int) $this->nextMonthDate->format('N');
         $lastDayCurrentMonth = (int) $currentMonth->format('d');
 
-        $totalDaysToShow = $lastDayPreviusMonthEnd + $lastDayCurrentMonth + $firstDayNextMonthStart + 1;
+        $totalDaysToShow = $lastDayCurrentMonth + ($lastDayPreviusMonthEnd % 7);
+        if ($firstDayNextMonthStart > 1) {
+            $totalDaysToShow += 7 - $firstDayNextMonthStart + 1;
+        }
 
         $dayNumber = 1;
         $dayNumberNextMonth = 1;
+        $dayNumberPreviousMonth = $lastDayPreviusMonthEnd;
 
         $this->days = [];
 
         for ($columnIndex = 1; $columnIndex <= $totalDaysToShow; $columnIndex++) {
             $columnNumber = (int) ceil($columnIndex / 7);
-            if ($columnNumber === 1 && $columnIndex <= $lastDayPreviusMonthEnd) {
+            if ($columnNumber === 1 && $lastDayPreviusMonthEnd < 7 && $columnIndex <= $lastDayPreviusMonthEnd) {
                 $this->days[] = [
-                    'value' => (int) $this->previousMonthDate->format('d') - $lastDayPreviusMonthEnd + $columnNumber,
-                    'class' => null,
+                    'value' => (int) $this->previousMonthDate->format('d') - $dayNumberPreviousMonth + 1,
+                    'class' => '',
                     'out' => true,
                 ];
+                $dayNumberPreviousMonth--;
                 continue;
             }
 
@@ -103,7 +108,7 @@ class Calendar
 
             $this->days[] = [
                 'value' => $dayNumberNextMonth,
-                'class' => null,
+                'class' => '',
                 'out' => true,
             ];
             $dayNumberNextMonth++;

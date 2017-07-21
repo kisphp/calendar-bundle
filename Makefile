@@ -15,3 +15,4 @@ t:
 	$(PHPCS) fix -v
 	$(PHP) vendor/bin/phpstan analyze -l 3 src
 	$(PHP) vendor/bin/phpstan analyze -l 1 tests
+#
