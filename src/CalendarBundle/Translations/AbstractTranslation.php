@@ -25,6 +25,7 @@ abstract class AbstractTranslation
         if ($dayNumber < 1 || $dayNumber > 7) {
             $dayNumber = 1;
         }
+
         return $this->days[$dayNumber];
     }
 }

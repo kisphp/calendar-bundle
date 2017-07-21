@@ -3,7 +3,6 @@
 namespace Kisphp\CalendarBundle\Services;
 
 use Kisphp\CalendarBundle\Translations\AbstractTranslation;
-use Kisphp\CalendarBundle\Translations\LangRo;
 
 class Calendar
 {
