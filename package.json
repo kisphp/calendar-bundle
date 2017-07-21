@@ -1,4 +1,13 @@
 {
+  "name": "kisphp-calendar",
+  "license": "MIT",
+  "author": {
+    "name": "Marius-Bogdan Rizac"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kisphp/calendar-bundle.git"
+  },
   "scripts": {
     "gulp": "gulp --gulpfile gulp/gulpfile.js --cwd .",
     "postinstall": "npm run gulp"
