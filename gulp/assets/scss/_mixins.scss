@@ -1,0 +1,15 @@
+@mixin cls($height) {
+  clear: both;
+  height: $height;
+  line-height: $height;
+  overflow: hidden;
+}
+
+@mixin column($width, $height) {
+  width: $width;
+  text-align: center;
+  height: $height;
+  line-height: $height;
+  margin: 1px;
+  border: 1px solid #ffffff;
+}

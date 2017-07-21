@@ -1,0 +1,13 @@
+{% for day in calendar.getDays() %}
+    {% if day.out == true %}
+        {% set dayClass = 'out' %}
+    {% elseif day.class == 'active' %}
+        {% set dayClass = 'active' %}
+    {% else %}
+        {% set dayClass = 'day' %}
+    {% endif %}
+    <div class="col float"><div class="{{ dayClass }}">{{ day.value }}</div></div>
+    {% if loop.index % 7 == 0 %}
+        <div class="clear"></div>
+    {% endif %}
+{% endfor %}

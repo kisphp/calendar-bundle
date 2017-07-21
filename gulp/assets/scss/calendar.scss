@@ -1,0 +1,66 @@
+$column_width: 50px;
+$column_height: 50px;
+$font-size: 20px;
+
+@import "mixins";
+
+.kisphp-calendar {
+  font-size: $font-size;
+
+  .clear {
+    @include cls(0);
+  }
+
+  .desp-5 {
+    @include cls(5px);
+  }
+
+  .desp-10 {
+    @include cls(10px);
+  }
+
+  .float {
+    float: left;
+  }
+
+  .col {
+    border: 1px solid #cccccc;
+    margin: 1px;
+    width: $column_width;
+    height: $column_height;
+    line-height: $column_height;
+    text-align: center;
+    font-size: $font-size;
+
+    .activ {
+      background: #336699;
+      color: #ffffff;
+    }
+  }
+
+  .row-top {
+    div {
+      background: #ccc;
+    }
+    .middle {
+      @include column(($column_width * 5) + (3 * 5) + 1, 20px);
+    }
+
+    .prev-next {
+      @include column($column_width, 20px);
+    }
+  }
+
+  .row-head, .row-top {
+    .col {
+      height: $column_height;
+      line-height: $column_height;
+      font-size: $font-size - 2;
+    }
+  }
+
+  .out {
+    color: #cccccc;
+  }
+}
+

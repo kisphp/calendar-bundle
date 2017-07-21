@@ -1,0 +1,6 @@
+vendor/
+composer.lock
+.idea/
+coverage/
+coverage*
+node_modules/
