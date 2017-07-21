@@ -1,71 +1,66 @@
-.clear {
-  clear: both;
-  height: 0px;
-  line-height: 0px;
-  overflow: hidden;
-}
+$column_width: 50px;
+$column_height: 50px;
+$font-size: 20px;
 
-.desp-5 {
-  clear: both;
-  height: 5px;
-  line-height: 5px;
-  overflow: hidden;
-}
+@import "mixins";
 
-.desp-10 {
-  clear: both;
-  height: 10px;
-  line-height: 10px;
-  overflow: hidden;
-}
+.kisphp-calendar {
+  font-size: $font-size;
 
-.float {
-  float: left;
-}
-
-.col {
-  border: 1px solid #cccccc;
-  margin: 1px;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  text-align: center;
-  font-size: 12px;
-
-  .activ {
-    background: #336699;
-    color: #ffffff;
-  }
-}
-
-.row-top {
-  .middle {
-    width: 141px;
-    text-align: center;
-    height: 20px;
-    line-height: 20px;
-    margin: 1px;
-    border: 1px solid #ffffff;
+  .clear {
+    @include cls(0);
   }
 
-  .prev-next {
-    width: 25px;
-    text-align: center;
-    height: 20px;
-    line-height: 20px;
-    margin: 1px;
-    border: 1px solid #ffffff;
+  .desp-5 {
+    @include cls(5px);
   }
-}
 
-.row-head {
+  .desp-10 {
+    @include cls(10px);
+  }
+
+  .float {
+    float: left;
+  }
+
   .col {
-    height: 20px;
-    line-height: 20px;
-    font-size: 10px;
+    border: 1px solid #cccccc;
+    margin: 1px;
+    width: $column_width;
+    height: $column_height;
+    line-height: $column_height;
+    text-align: center;
+    font-size: $font-size;
+
+    .activ {
+      background: #336699;
+      color: #ffffff;
+    }
+  }
+
+  .row-top {
+    div {
+      background: #ccc;
+    }
+    .middle {
+      @include column(($column_width * 5) + (3 * 5) + 1, 20px);
+    }
+
+    .prev-next {
+      @include column($column_width, 20px);
+    }
+  }
+
+  .row-head, .row-top {
+    .col {
+      height: $column_height;
+      line-height: $column_height;
+      font-size: $font-size - 2;
+    }
+  }
+
+  .out {
+    color: #cccccc;
   }
 }
 
-.out {
-  color: #cccccc;
-}

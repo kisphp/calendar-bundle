@@ -1,5 +1,3 @@
-# Kisphp Tools classes
+# Kisphp Calendar Bundle
 
-[![Build Status](https://travis-ci.org/kisphp/tools.svg?branch=master)](https://travis-ci.org/kisphp/tools)
-[![codecov](https://codecov.io/gh/kisphp/tools/branch/master/graph/badge.svg)](https://codecov.io/gh/kisphp/tools)
-
+[![Build Status](https://travis-ci.org/kisphp/calendar-bundle.svg?branch=master)](https://travis-ci.org/kisphp/calendar-bundle)
