@@ -5,10 +5,11 @@ php:
 before_script:
   - travis_retry composer self-update
 install:
-#  - COMPOSER_ALLOW_XDEBUG=0 composer install --prefer-dist --no-interaction
-  - composer install --prefer-dist --no-interaction
+  - COMPOSER_ALLOW_XDEBUG=0 composer install --prefer-dist --no-interaction
+#  - composer install --prefer-dist --no-interaction
 script:
-  - vendor/bin/phpunit --coverage-clover=coverage.xml
+#  - vendor/bin/phpunit --coverage-clover=coverage.xml
+  - vendor/bin/phpunit
   - vendor/bin/php-cs-fixer fix --dry-run
   - vendor/bin/phpstan analyze -l 3 src
   - vendor/bin/phpstan analyze tests
