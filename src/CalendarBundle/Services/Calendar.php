@@ -7,8 +7,6 @@ use Kisphp\CalendarBundle\Translations\LangRo;
 
 class Calendar
 {
-    const NEXT_LINE = '<br>';
-
     /**
      * @var AbstractTranslation
      */
@@ -19,9 +17,12 @@ class Calendar
      */
     protected $days = [];
 
-    public function __construct()
+    /**
+     * @param AbstractTranslation $translation
+     */
+    public function __construct(AbstractTranslation $translation)
     {
-        $this->trans = new LangRo();
+        $this->trans = $translation;
     }
 
     /**
@@ -56,43 +57,40 @@ class Calendar
         $firstDayNextMonthStart = 7 - (int) $nextMonthDate->format('N');
         $lastDayCurrentMonth = (int) $currentMonth->format('d');
 
-        $totalDaysToShow = $lastDayPreviusMonthEnd + $lastDayCurrentMonth + $firstDayNextMonthStart;
-
-        $numberOfColumns = ceil($totalDaysToShow / 7);
+        $totalDaysToShow = $lastDayPreviusMonthEnd + $lastDayCurrentMonth + $firstDayNextMonthStart + 1;
 
         $dayNumber = 1;
         $dayNumberNextMonth = 1;
 
         $this->days = [];
 
-        for ($rowNumber = 1; $rowNumber <= $numberOfColumns; $rowNumber++) {
-            for ($columnNumber = 1; $columnNumber <= 7; $columnNumber++) {
-                if ($rowNumber === 1 && $columnNumber <= $lastDayPreviusMonthEnd) {
-                    $this->days[] = [
-                        'value' => (int) $previousMonthDate->format('d') - $lastDayPreviusMonthEnd + $columnNumber,
-                        'class' => null,
-                        'out' => true,
-                    ];
-                    continue;
-                }
-
-                if ($dayNumber <= $lastDayCurrentMonth) {
-                    $this->days[] = [
-                        'value' => $dayNumber,
-                        'class' => ($dayNumber === (int) $selectedDate->format('d')) ? 'active' : '',
-                        'out' => false,
-                    ];
-                    $dayNumber++;
-                    continue;
-                }
-
+        for ($columnIndex = 1; $columnIndex <= $totalDaysToShow; $columnIndex++) {
+            $columnNumber = (int) floor($columnIndex / 7) + 1;
+            if ($columnNumber === 1 && $columnIndex <= $lastDayPreviusMonthEnd) {
                 $this->days[] = [
-                    'value' => $dayNumberNextMonth,
+                    'value' => (int) $previousMonthDate->format('d') - $lastDayPreviusMonthEnd + $columnNumber,
                     'class' => null,
                     'out' => true,
                 ];
-                $dayNumberNextMonth++;
+                continue;
             }
+
+            if ($dayNumber <= $lastDayCurrentMonth) {
+                $this->days[] = [
+                    'value' => $dayNumber,
+                    'class' => ($dayNumber === (int) $selectedDate->format('d')) ? 'active' : '',
+                    'out' => false,
+                ];
+                $dayNumber++;
+                continue;
+            }
+
+            $this->days[] = [
+                'value' => $dayNumberNextMonth,
+                'class' => null,
+                'out' => true,
+            ];
+            $dayNumberNextMonth++;
         }
 
         return $this;
