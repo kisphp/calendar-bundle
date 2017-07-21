@@ -65,7 +65,7 @@ class Calendar
         $this->days = [];
 
         for ($columnIndex = 1; $columnIndex <= $totalDaysToShow; $columnIndex++) {
-            $columnNumber = (int) floor($columnIndex / 7) + 1;
+            $columnNumber = (int) ceil($columnIndex / 7);
             if ($columnNumber === 1 && $columnIndex <= $lastDayPreviusMonthEnd) {
                 $this->days[] = [
                     'value' => (int) $previousMonthDate->format('d') - $lastDayPreviusMonthEnd + $columnNumber,
