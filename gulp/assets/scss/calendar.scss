@@ -1,32 +1,34 @@
-$column_width: 50px !default;
-$column_height: 50px !default;
+$column_width: 60px !default;
+$column_height: 60px !default;
 $font-size: 20px !default;
 $active_background: #369 !default;
 $active_color: #fff !default;
+$border_color: #ccc !default;
+$out_text_color: #ccc !default;
 
 @import "mixins";
 
+.clear {
+  @include cls(0);
+}
+
+.desp-5 {
+  @include cls(5px);
+}
+
+.desp-10 {
+  @include cls(10px);
+}
+
 .kisphp-calendar {
   font-size: $font-size;
-
-  .clear {
-    @include cls(0);
-  }
-
-  .desp-5 {
-    @include cls(5px);
-  }
-
-  .desp-10 {
-    @include cls(10px);
-  }
 
   .float {
     float: left;
   }
 
   .col {
-    border: 1px solid #ccc;
+    border: 1px solid $border_color;
     margin: 1px;
     width: $column_width;
     height: $column_height;
@@ -41,15 +43,12 @@ $active_color: #fff !default;
   }
 
   .row-top {
-    div {
-      background: #ccc;
-    }
     .middle {
-      @include column(($column_width * 5) + (3 * 5) + 1, 20px);
+      @include column(($column_width * 5) + (3 * 5) + 1, $column_width);
     }
 
     .prev-next {
-      @include column($column_width, 20px);
+      @include column($column_width, $column_width);
     }
   }
 
@@ -62,7 +61,6 @@ $active_color: #fff !default;
   }
 
   .out {
-    color: #cccccc;
+    color: $out_text_color;
   }
 }
-
