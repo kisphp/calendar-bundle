@@ -139,6 +139,14 @@ class Calendar
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getSelectedDate()
+    {
+        return $this->selectedDate;
+    }
+
+    /**
      * @return string
      */
     public function getCurrentDate()
