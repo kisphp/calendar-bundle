@@ -4,22 +4,31 @@ namespace Kisphp\CalendarBundle\Translations;
 
 abstract class AbstractTranslation
 {
-    protected $days = [
-        1 => 'Mon',
-        'Tue',
-        'Wed',
-        'Thu',
-        'Fri',
-        'Sat',
-        'Sun',
-    ];
+    /**
+     * @var array
+     */
+    protected $days = [];
+
+    /**
+     * @var array
+     */
     protected $months = [];
 
+    /**
+     * @param int $monthIndex
+     *
+     * @return mixed
+     */
     public function getMonthName($monthIndex)
     {
         return $this->months[$monthIndex];
     }
 
+    /**
+     * @param int $dayNumber
+     *
+     * @return string
+     */
     public function getDayShort($dayNumber)
     {
         if ($dayNumber < 1 || $dayNumber > 7) {
