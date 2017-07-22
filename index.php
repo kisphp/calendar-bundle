@@ -13,8 +13,11 @@ $twig = new Twig_Environment($loader, [
 $year = (int) $_GET['year'] ?? date('Y');
 $month = (int) $_GET['month'] ?? date('m');
 
-$translation = new \Kisphp\CalendarBundle\Translations\LangRo();
-$calendar = new \Kisphp\CalendarBundle\Services\Calendar($translation);
+use Kisphp\CalendarBundle\Translations\LangRo;
+use Kisphp\CalendarBundle\Services\Calendar;
+
+$translation = new LangRo();
+$calendar = new Calendar($translation);
 $calendar->generateData($year, $month, date('d'));
 
 echo $twig->render('@Calendar/Demo/calendar.html.twig', [
