@@ -1,0 +1,6 @@
+<div class="row-top">
+    <div class="float prev-next text-center"><a href="/index.php?month={{ calendar.previousMonth | date("m") }}&year={{ calendar.previousMonth | date('Y') }}">&lt;&lt;</a></div>
+    <div class="float middle text-center">{{ calendar.getCurrentDate() }} {{ calendar.currentYear }}</div>
+    <div class="float prev-next text-center"><a href="/index.php?month={{ calendar.nextMonth | date("m") }}&year={{ calendar.nextMonth | date('Y') }}">&gt;&gt;</a></div>
+</div>
+<div class="clear"></div>

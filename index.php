@@ -10,9 +10,12 @@ $twig = new Twig_Environment($loader, [
     'debug' => true,
 ]);
 
+$year = (int) $_GET['year'] ?? date('Y');
+$month = (int) $_GET['month'] ?? date('m');
+
 $translation = new \Kisphp\CalendarBundle\Translations\LangRo();
 $calendar = new \Kisphp\CalendarBundle\Services\Calendar($translation);
-$calendar->generateData(2017, 5, 21);
+$calendar->generateData($year, $month, date('d'));
 
 echo $twig->render('@Calendar/Demo/calendar.html.twig', [
     'calendar' => $calendar,

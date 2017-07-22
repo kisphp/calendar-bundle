@@ -1,52 +1,53 @@
+.clear {
+  clear: both;
+  height: 0;
+  line-height: 0;
+  overflow: hidden; }
+
+.desp-5 {
+  clear: both;
+  height: 5px;
+  line-height: 5px;
+  overflow: hidden; }
+
+.desp-10 {
+  clear: both;
+  height: 10px;
+  line-height: 10px;
+  overflow: hidden; }
+
 .kisphp-calendar {
   font-size: 20px; }
-  .kisphp-calendar .clear {
-    clear: both;
-    height: 0;
-    line-height: 0;
-    overflow: hidden; }
-  .kisphp-calendar .desp-5 {
-    clear: both;
-    height: 5px;
-    line-height: 5px;
-    overflow: hidden; }
-  .kisphp-calendar .desp-10 {
-    clear: both;
-    height: 10px;
-    line-height: 10px;
-    overflow: hidden; }
   .kisphp-calendar .float {
     float: left; }
   .kisphp-calendar .col {
     border: 1px solid #ccc;
     margin: 1px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
     text-align: center;
     font-size: 20px; }
     .kisphp-calendar .col .active {
       background: #369;
       color: #fff; }
-  .kisphp-calendar .row-top div {
-    background: #ccc; }
   .kisphp-calendar .row-top .middle {
-    width: 266px;
+    width: 316px;
     text-align: center;
-    height: 20px;
-    line-height: 20px;
+    height: 60px;
+    line-height: 60px;
     margin: 1px;
     border: 1px solid #ffffff; }
   .kisphp-calendar .row-top .prev-next {
-    width: 50px;
+    width: 60px;
     text-align: center;
-    height: 20px;
-    line-height: 20px;
+    height: 60px;
+    line-height: 60px;
     margin: 1px;
     border: 1px solid #ffffff; }
   .kisphp-calendar .row-head .col, .kisphp-calendar .row-top .col {
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     font-size: 18px; }
   .kisphp-calendar .out {
-    color: #cccccc; }
+    color: #ccc; }
