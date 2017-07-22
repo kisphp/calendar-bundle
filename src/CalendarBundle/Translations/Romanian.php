@@ -2,8 +2,24 @@
 
 namespace Kisphp\CalendarBundle\Translations;
 
-class LangRo extends AbstractTranslation
+class Romanian extends AbstractTranslation
 {
+    /**
+     * @var array
+     */
+    protected $days = [
+        1 => 'Lun',
+        'Mar',
+        'Mie',
+        'Joi',
+        'Vin',
+        'Sam',
+        'Dum',
+    ];
+
+    /**
+     * @var array
+     */
     protected $months = [
         1 => 'Ianuarie',
         2 => 'Februarie',
