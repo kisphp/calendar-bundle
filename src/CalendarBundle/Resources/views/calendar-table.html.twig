@@ -6,7 +6,9 @@
     {% else %}
         {% set dayClass = 'day' %}
     {% endif %}
-    <div class="col float"><div class="{{ dayClass }}">{{ day.value }}</div></div>
+    <div class="col float">
+        <div class="{{ dayClass }}">{{ day.value }}</div>
+    </div>
     {% if loop.index % 7 == 0 %}
         <div class="clear"></div>
     {% endif %}
