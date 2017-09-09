@@ -5,6 +5,9 @@ $active_background: #369 !default;
 $active_color: #fff !default;
 $border_color: #ccc !default;
 $out_text_color: #ccc !default;
+$col_border_width: 1px solid $border_color !default;
+$col_margin: 0 !default;
+$col_text_align: center !default;
 
 @import "mixins";
 
@@ -28,12 +31,12 @@ $out_text_color: #ccc !default;
   }
 
   .col {
-    border: 1px solid $border_color;
-    margin: 1px;
+    border: $col_border_width;
+    margin: $col_margin;
     width: $column_width;
     height: $column_height;
     line-height: $column_height;
-    text-align: center;
+    text-align: $col_text_align;
     font-size: $font-size;
 
     .active {
