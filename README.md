@@ -1,6 +1,7 @@
 # Kisphp Calendar Bundle
 
-[![Build Status](https://travis-ci.org/kisphp/calendar-bundle.svg?branch=master)](https://travis-ci.org/kisphp/calendar-bundle)
+![example workflow](https://github.com/kisphp/calendar-bundle/actions/workflows/phpunit-run.yml/badge.svg)
+![example workflow](https://github.com/kisphp/calendar-bundle/actions/workflows/npm-run.yml/badge.svg)
 
 ## Installation
 
