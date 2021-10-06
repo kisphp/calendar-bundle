@@ -1,4 +1,4 @@
-name: NPM CI pipeline
+name: NPM
 on: [push]
 jobs:
   Run-Tests:

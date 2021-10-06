@@ -1,4 +1,4 @@
-name: PHPUNIT CI pipeline
+name: PHPUNIT
 on: [push]
 jobs:
   Run-Tests:
