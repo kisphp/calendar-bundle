@@ -11,7 +11,7 @@
   },
   "scripts": {
     "gulp": "gulp --gulpfile gulp/gulpfile.js --cwd .",
-    "postinstall": "npm run gulp"
+    "build": "npm run gulp"
   },
   "dependencies": {
     "gulp": "^4.0.2",
